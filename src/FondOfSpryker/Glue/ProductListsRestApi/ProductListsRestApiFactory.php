@@ -44,7 +44,7 @@ class ProductListsRestApiFactory extends AbstractFactory
      */
     protected function getProductListCompanyClient(): ProductListsRestApiToProductListCompanyClientInterface
     {
-        return $this->getProvidedDependency(ProductListRestApiDependencyProvider::CLIENT_PRODUCT_LIST_COMPANY);
+        return $this->getProvidedDependency(ProductListsRestApiDependencyProvider::CLIENT_PRODUCT_LIST_COMPANY);
     }
 
     /**
@@ -54,6 +54,6 @@ class ProductListsRestApiFactory extends AbstractFactory
      */
     protected function getProductListCustomerClient(): ProductListsRestApiToProductListCustomerClientInterface
     {
-        return $this->getProvidedDependency(ProductListRestApiDependencyProvider::CLIENT_PRODUCT_LIST_CUSTOMER);
+        return $this->getProvidedDependency(ProductListsRestApiDependencyProvider::CLIENT_PRODUCT_LIST_CUSTOMER);
     }
 }

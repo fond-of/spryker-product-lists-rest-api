@@ -7,7 +7,7 @@ use FondOfSpryker\Glue\ProductListsRestApi\Dependency\Client\ProductListsRestApi
 use Spryker\Glue\Kernel\AbstractBundleDependencyProvider;
 use Spryker\Glue\Kernel\Container;
 
-class ProductListRestApiDependencyProvider extends AbstractBundleDependencyProvider
+class ProductListsRestApiDependencyProvider extends AbstractBundleDependencyProvider
 {
     public const CLIENT_PRODUCT_LIST_CUSTOMER = 'CLIENT_PRODUCT_LIST_CUSTOMER';
     public const CLIENT_PRODUCT_LIST_COMPANY = 'CLIENT_PRODUCT_LIST_COMPANY';
