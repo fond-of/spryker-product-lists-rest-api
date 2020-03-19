@@ -23,4 +23,17 @@ class ProductListsMapper implements ProductListsMapperInterface
 
         return $restProductListsAttributesTransfer;
     }
+
+    /**
+     * @param \Generated\Shared\Transfer\ProductListTransfer $productListTransfer
+     * @param \Generated\Shared\Transfer\RestProductListsAttributesTransfer $restProductListsAttributesTransfer
+     *
+     * @return \Generated\Shared\Transfer\RestProductListsAttributesTransfer
+     */
+    public function mapProductListTransferToRestProductListResponseAttributesTransfer(
+        ProductListTransfer $productListTransfer,
+        RestProductListsAttributesTransfer $restProductListsAttributesTransfer
+    ): RestProductListsAttributesTransfer {
+        return $restProductListsAttributesTransfer->fromArray($productListTransfer->toArray(), true);
+    }
 }

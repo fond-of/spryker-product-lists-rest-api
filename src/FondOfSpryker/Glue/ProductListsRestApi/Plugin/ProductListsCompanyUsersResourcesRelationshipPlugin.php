@@ -22,7 +22,7 @@ class ProductListsCompanyUsersResourcesRelationshipPlugin extends AbstractPlugin
     public function addResourceRelationships(array $resources, RestRequestInterface $restRequest): void
     {
         $this->getFactory()
-            ->creatProductListsResourceRelationshipExpander()
+            ->createProductListsResourceRelationshipExpander()
             ->addResourceRelationships($resources, $restRequest);
     }
 
