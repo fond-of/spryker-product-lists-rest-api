@@ -28,7 +28,7 @@ class ProductListsRestApiDependencyProvider extends AbstractBundleDependencyProv
      *
      * @return \Spryker\Zed\Kernel\Container
      */
-    public function addProductListFacade(Container $container): Container
+    protected function addProductListFacade(Container $container): Container
     {
         $container[static::PRODUCT_LIST_FACADE] = static function (Container $container) {
             return $container->getLocator()->productList()->facade();

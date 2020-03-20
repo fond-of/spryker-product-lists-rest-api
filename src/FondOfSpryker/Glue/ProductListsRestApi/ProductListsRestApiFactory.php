@@ -18,7 +18,6 @@ use Spryker\Glue\Kernel\AbstractFactory;
 /**
  * @method \FondOfSpryker\Client\ProductListsRestApi\ProductListsRestApiClientInterface getClient()
  * @method \FondOfSpryker\Glue\ProductListsRestApi\ProductListsRestApiFactory getFactory()
- * @method \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface getResourceBuilder()
  */
 class ProductListsRestApiFactory extends AbstractFactory
 {

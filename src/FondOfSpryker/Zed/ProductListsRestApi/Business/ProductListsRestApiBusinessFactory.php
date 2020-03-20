@@ -2,11 +2,11 @@
 
 namespace FondOfSpryker\Zed\ProductListsRestApi\Business;
 
-use FondOfSpryker\Zed\ProductList\Business\ProductListFacadeInterface;
 use FondOfSpryker\Zed\ProductListsRestApi\Business\Reader\ProductListsReader;
 use FondOfSpryker\Zed\ProductListsRestApi\Business\Reader\ProductListsReaderInterface;
 use FondOfSpryker\Zed\ProductListsRestApi\ProductListsRestApiDependencyProvider;
 use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
+use Spryker\Zed\ProductList\Business\ProductListFacadeInterface;
 
 /**
  * @method \FondOfSpryker\Zed\ProductListsRestApi\Persistence\ProductListsRestApiRepositoryInterface getRepository()
@@ -27,9 +27,9 @@ class ProductListsRestApiBusinessFactory extends AbstractBusinessFactory
     /**
      * @throws
      *
-     * @return \FondOfSpryker\Zed\ProductList\Business\ProductListFacadeInterface
+     * @return \Spryker\Zed\ProductList\Business\ProductListFacadeInterface
      */
-    public function getProductListFacade(): ProductListFacadeInterface
+    protected function getProductListFacade(): ProductListFacadeInterface
     {
         return $this->getProvidedDependency(ProductListsRestApiDependencyProvider::PRODUCT_LIST_FACADE);
     }

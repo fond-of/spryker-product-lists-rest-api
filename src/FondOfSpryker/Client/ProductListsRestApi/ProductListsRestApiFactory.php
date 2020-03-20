@@ -18,11 +18,11 @@ class ProductListsRestApiFactory extends AbstractFactory
     }
 
     /**
-     * @return \FondOfSpryker\Client\ProductListsRestApi\Dependency\Client\ProductListsRestApiToZedRequestClientInterface
      * @throws
      *
+     * @return \FondOfSpryker\Client\ProductListsRestApi\Dependency\Client\ProductListsRestApiToZedRequestClientInterface
      */
-    public function getZedRequestClient(): ProductListsRestApiToZedRequestClientInterface
+    protected function getZedRequestClient(): ProductListsRestApiToZedRequestClientInterface
     {
         return $this->getProvidedDependency(ProductListsRestApiDependencyProvider::CLIENT_ZED_REQUEST);
     }

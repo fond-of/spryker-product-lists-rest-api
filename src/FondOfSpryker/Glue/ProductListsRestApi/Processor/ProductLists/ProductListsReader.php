@@ -120,7 +120,7 @@ class ProductListsReader implements ProductListsReaderInterface
         }
 
         if (!$this->productListIsFromCustomerOrCompanyUser($productListResponseTransfer->getProductList(), $restRequest->getRestUser())) {
-            return $this->restApiError->addProductListUuidMissingError($restResponse);
+            return $this->restApiError->addProductListNoPermissionError($restResponse);
         }
 
         $restProductListsAttributesTransfer = $this->productListsMapper
