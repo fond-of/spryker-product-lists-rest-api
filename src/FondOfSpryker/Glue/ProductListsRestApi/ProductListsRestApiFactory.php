@@ -58,8 +58,6 @@ class ProductListsRestApiFactory extends AbstractFactory
     }
 
     /**
-     * @throws
-     *
      * @return \FondOfSpryker\Glue\ProductListsRestApi\Dependency\Client\ProductListsRestApiToProductListCompanyClientInterface
      */
     protected function getProductListCompanyClient(): ProductListsRestApiToProductListCompanyClientInterface
@@ -68,8 +66,6 @@ class ProductListsRestApiFactory extends AbstractFactory
     }
 
     /**
-     * @throws
-     *
      * @return \FondOfSpryker\Glue\ProductListsRestApi\Dependency\Client\ProductListsRestApiToProductListCustomerClientInterface
      */
     protected function getProductListCustomerClient(): ProductListsRestApiToProductListCustomerClientInterface
@@ -78,8 +74,6 @@ class ProductListsRestApiFactory extends AbstractFactory
     }
 
     /**
-     * @throws
-     *
      * @return \FondOfSpryker\Glue\ProductListsRestApi\Dependency\Client\ProductListsRestApiToCompanyUserClientInterface
      */
     protected function getCompanyUserClient(): ProductListsRestApiToCompanyUserClientInterface

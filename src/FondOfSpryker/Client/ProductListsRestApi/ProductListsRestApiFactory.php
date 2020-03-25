@@ -18,8 +18,6 @@ class ProductListsRestApiFactory extends AbstractFactory
     }
 
     /**
-     * @throws
-     *
      * @return \FondOfSpryker\Client\ProductListsRestApi\Dependency\Client\ProductListsRestApiToZedRequestClientInterface
      */
     protected function getZedRequestClient(): ProductListsRestApiToZedRequestClientInterface

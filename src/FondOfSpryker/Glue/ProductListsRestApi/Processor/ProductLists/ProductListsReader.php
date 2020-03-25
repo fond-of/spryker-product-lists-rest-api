@@ -26,7 +26,7 @@ class ProductListsReader implements ProductListsReaderInterface
     protected $restResourceBuilder;
 
     /**
-     * @var \FondOfSpryker\Glue\CheckoutRestApi\Processor\Validation\RestApiErrorInterface
+     * @var \FondOfSpryker\Glue\ProductListsRestApi\Processor\Validation\RestApiErrorInterface
      */
     protected $restApiError;
 
@@ -138,17 +138,25 @@ class ProductListsReader implements ProductListsReaderInterface
      *
      * @return bool
      */
-    protected function productListIsFromCustomerOrCompanyUser(ProductListTransfer $productListTransfer, ?RestUserTransfer $restUserTransfer): bool
-    {
+    protected function productListIsFromCustomerOrCompanyUser(
+        ProductListTransfer $productListTransfer,
+        ?RestUserTransfer $restUserTransfer
+    ): bool {
         if ($restUserTransfer === null) {
             return false;
         }
 
-        if ($this->productListCustomerRelationHasRestUser($productListTransfer->getProductListCustomerRelation(), $restUserTransfer)) {
+        if ($this->productListCustomerRelationHasRestUser(
+            $productListTransfer->getProductListCustomerRelation(),
+            $restUserTransfer
+        )) {
             return true;
         }
 
-        if ($this->productListCompanyUserRelationshipHasRestUserCompanyId($productListTransfer->getProductListCompanyRelation(), $restUserTransfer)) {
+        if ($this->productListCompanyUserRelationshipHasRestUserCompanyId(
+            $productListTransfer->getProductListCompanyRelation(),
+            $restUserTransfer
+        )) {
             return true;
         }
 
@@ -161,8 +169,10 @@ class ProductListsReader implements ProductListsReaderInterface
      *
      * @return bool
      */
-    protected function productListCustomerRelationHasRestUser(?ProductListCustomerRelationTransfer $productListCustomerRelationTransfer, RestUserTransfer $restUserTransfer): bool
-    {
+    protected function productListCustomerRelationHasRestUser(
+        ?ProductListCustomerRelationTransfer $productListCustomerRelationTransfer,
+        RestUserTransfer $restUserTransfer
+    ): bool {
         if ($productListCustomerRelationTransfer === null) {
             return false;
         }
@@ -176,8 +186,10 @@ class ProductListsReader implements ProductListsReaderInterface
      *
      * @return bool
      */
-    protected function productListCompanyUserRelationshipHasRestUserCompanyId(?ProductListCompanyRelationTransfer $productListCompanyRelationTransfer, RestUserTransfer $restUserTransfer): bool
-    {
+    protected function productListCompanyUserRelationshipHasRestUserCompanyId(
+        ?ProductListCompanyRelationTransfer $productListCompanyRelationTransfer,
+        RestUserTransfer $restUserTransfer
+    ): bool {
         if ($productListCompanyRelationTransfer === null) {
             return false;
         }
@@ -192,7 +204,11 @@ class ProductListsReader implements ProductListsReaderInterface
                 continue;
             }
 
-            if (in_array($companyUserTransfer->getCompany()->getIdCompany(), $productListCompanyRelationTransfer->getCompanyIds(), true)) {
+            if (in_array(
+                $companyUserTransfer->getCompany()->getIdCompany(),
+                $productListCompanyRelationTransfer->getCompanyIds(),
+                true
+            )) {
                 return true;
             }
         }

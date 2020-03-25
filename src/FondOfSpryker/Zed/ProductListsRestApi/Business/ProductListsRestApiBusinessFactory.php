@@ -25,8 +25,6 @@ class ProductListsRestApiBusinessFactory extends AbstractBusinessFactory
     }
 
     /**
-     * @throws
-     *
      * @return \Spryker\Zed\ProductList\Business\ProductListFacadeInterface
      */
     protected function getProductListFacade(): ProductListFacadeInterface
