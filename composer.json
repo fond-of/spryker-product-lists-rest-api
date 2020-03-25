@@ -14,8 +14,7 @@
     "fond-of-spryker/product-list-company": "dev-master",
     "fond-of-spryker/product-list-customer": "dev-master",
     "spryker/company-user": "^2.5.0",
-    "spryker/glue-application": "^1.0.0",
-    "spryker/product-list-storage": "^1.0.0"
+    "spryker/glue-application": "^1.0.0"
   },
   "require-dev": {
     "codeception/codeception": "^2.4",
