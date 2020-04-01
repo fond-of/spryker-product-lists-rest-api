@@ -119,7 +119,7 @@ class ProductListsReader implements ProductListsReaderInterface
             return $this->restApiError->addProductListNotFoundError($restResponse);
         }
 
-        if (!$this->productListIsFromCustomerOrCompanyUser($productListResponseTransfer->getProductList(), $restRequest->getRestUser())) {
+        if (!$this->isProductListAssignedToCurrentUser($productListResponseTransfer->getProductList(), $restRequest->getRestUser())) {
             return $this->restApiError->addProductListNoPermissionError($restResponse);
         }
 
@@ -138,7 +138,7 @@ class ProductListsReader implements ProductListsReaderInterface
      *
      * @return bool
      */
-    protected function productListIsFromCustomerOrCompanyUser(
+    protected function isProductListAssignedToCurrentUser(
         ProductListTransfer $productListTransfer,
         ?RestUserTransfer $restUserTransfer
     ): bool {
@@ -146,14 +146,14 @@ class ProductListsReader implements ProductListsReaderInterface
             return false;
         }
 
-        if ($this->productListCustomerRelationHasRestUser(
+        if ($this->isProductListAssignedToCustomer(
             $productListTransfer->getProductListCustomerRelation(),
             $restUserTransfer
         )) {
             return true;
         }
 
-        if ($this->productListCompanyUserRelationshipHasRestUserCompanyId(
+        if ($this->isProductListAssignedToCompanyUser(
             $productListTransfer->getProductListCompanyRelation(),
             $restUserTransfer
         )) {
@@ -169,7 +169,7 @@ class ProductListsReader implements ProductListsReaderInterface
      *
      * @return bool
      */
-    protected function productListCustomerRelationHasRestUser(
+    protected function isProductListAssignedToCustomer(
         ?ProductListCustomerRelationTransfer $productListCustomerRelationTransfer,
         RestUserTransfer $restUserTransfer
     ): bool {
@@ -186,7 +186,7 @@ class ProductListsReader implements ProductListsReaderInterface
      *
      * @return bool
      */
-    protected function productListCompanyUserRelationshipHasRestUserCompanyId(
+    protected function isProductListAssignedToCompanyUser(
         ?ProductListCompanyRelationTransfer $productListCompanyRelationTransfer,
         RestUserTransfer $restUserTransfer
     ): bool {

@@ -69,7 +69,7 @@ class ProductListsRestApiFacadeTest extends Unit
             ->willReturn($this->productListsReaderInterfaceMock);
 
         $this->productListsReaderInterfaceMock->expects($this->atLeastOnce())
-            ->method('findCompanyByUuid')
+            ->method('findProductListsByUuid')
             ->with($this->productListTransferMock)
             ->willReturn($this->productListResponseTransferMock);
 

@@ -36,7 +36,7 @@ class ProductListsReader implements ProductListsReaderInterface
      *
      * @return \Generated\Shared\Transfer\ProductListResponseTransfer
      */
-    public function findCompanyByUuid(ProductListTransfer $productListTransfer): ProductListResponseTransfer
+    public function findProductListsByUuid(ProductListTransfer $productListTransfer): ProductListResponseTransfer
     {
         $productListTransfer->requireUuid();
 

@@ -19,6 +19,6 @@ class ProductListsRestApiFacade extends AbstractFacade implements ProductListsRe
      */
     public function findProductListByUuid(ProductListTransfer $productListTransfer): ProductListResponseTransfer
     {
-        return $this->getFactory()->createProductListsRestApiReader()->findCompanyByUuid($productListTransfer);
+        return $this->getFactory()->createProductListsRestApiReader()->findProductListsByUuid($productListTransfer);
     }
 }

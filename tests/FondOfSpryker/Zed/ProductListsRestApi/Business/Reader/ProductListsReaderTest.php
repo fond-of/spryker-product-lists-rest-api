@@ -85,7 +85,7 @@ class ProductListsReaderTest extends Unit
 
         $this->assertInstanceOf(
             ProductListResponseTransfer::class,
-            $this->productListsReader->findCompanyByUuid(
+            $this->productListsReader->findProductListsByUuid(
                 $this->productListTransferMock
             )
         );
