@@ -15,7 +15,7 @@ class ProductListsReader implements ProductListsReaderInterface
     protected $productListsRestApiRepository;
 
     /**
-     * @var \FondOfSpryker\Zed\ProductListsRestApi\Business\ProductListsRestApiFacadeInterface
+     * @var \Spryker\Zed\ProductList\Business\ProductListFacadeInterface
      */
     protected $productListFacade;
 
@@ -48,7 +48,7 @@ class ProductListsReader implements ProductListsReaderInterface
 
         $productListResponseTransfer = new ProductListResponseTransfer();
 
-        if (!$productListTransfer) {
+        if ($productListTransfer->getIdProductList() === null) {
             return $productListResponseTransfer->setIsSuccessful(false);
         }
 
