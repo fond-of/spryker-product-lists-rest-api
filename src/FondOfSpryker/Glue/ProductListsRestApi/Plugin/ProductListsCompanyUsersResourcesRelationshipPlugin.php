@@ -1,6 +1,5 @@
 <?php
 
-
 namespace FondOfSpryker\Glue\ProductListsRestApi\Plugin;
 
 use FondOfSpryker\Glue\ProductListsRestApi\ProductListsRestApiConfig;
