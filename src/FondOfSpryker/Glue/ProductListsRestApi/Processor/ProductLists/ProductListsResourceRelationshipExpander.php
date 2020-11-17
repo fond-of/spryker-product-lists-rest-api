@@ -74,6 +74,7 @@ class ProductListsResourceRelationshipExpander implements ProductListsResourceRe
 
             if ($productListCollectionTransfer->getProductLists()->count() > 0) {
                 $this->addProductListsResourceRelationships($resource, $productListCollectionTransfer);
+
                 continue;
             }
 
@@ -86,6 +87,7 @@ class ProductListsResourceRelationshipExpander implements ProductListsResourceRe
 
             if ($productListCollectionTransfer->getProductLists()->count() > 0) {
                 $this->addProductListsResourceRelationships($resource, $productListCollectionTransfer);
+
                 continue;
             }
         }

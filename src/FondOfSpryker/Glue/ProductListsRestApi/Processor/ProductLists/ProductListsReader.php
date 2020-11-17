@@ -41,7 +41,7 @@ class ProductListsReader implements ProductListsReaderInterface
     protected $productListsMapper;
 
     /**
-     * @var \Spryker\Client\CompanyUser\CompanyUserClientInterface
+     * @var \FondOfSpryker\Glue\ProductListsRestApi\Dependency\Client\ProductListsRestApiToCompanyUserClientInterface
      */
     protected $companyUserClient;
 
@@ -146,17 +146,21 @@ class ProductListsReader implements ProductListsReaderInterface
             return false;
         }
 
-        if ($this->isProductListAssignedToCustomer(
-            $productListTransfer->getProductListCustomerRelation(),
-            $restUserTransfer
-        )) {
+        if (
+            $this->isProductListAssignedToCustomer(
+                $productListTransfer->getProductListCustomerRelation(),
+                $restUserTransfer
+            )
+        ) {
             return true;
         }
 
-        if ($this->isProductListAssignedToCompanyUser(
-            $productListTransfer->getProductListCompanyRelation(),
-            $restUserTransfer
-        )) {
+        if (
+            $this->isProductListAssignedToCompanyUser(
+                $productListTransfer->getProductListCompanyRelation(),
+                $restUserTransfer
+            )
+        ) {
             return true;
         }
 
@@ -204,11 +208,13 @@ class ProductListsReader implements ProductListsReaderInterface
                 continue;
             }
 
-            if (in_array(
-                $companyUserTransfer->getCompany()->getIdCompany(),
-                $productListCompanyRelationTransfer->getCompanyIds(),
-                true
-            )) {
+            if (
+                in_array(
+                    $companyUserTransfer->getCompany()->getIdCompany(),
+                    $productListCompanyRelationTransfer->getCompanyIds(),
+                    true
+                )
+            ) {
                 return true;
             }
         }
